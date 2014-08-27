@@ -1,0 +1,27 @@
+---
+# tasks file for bash
+- name: install
+  apt:
+    name: bash
+    state: latest
+  tags: [configuration, bash, bash-install]
+
+- name: create configuration file - .bashrc
+  template:
+    src: etc/skel/.bashrc.j2
+    dest: "{{ item }}/.bashrc"
+    owner: root
+    group: root
+    mode: 0644
+  with_items: bash_bashrc_destinations
+  tags: [configuration, bash, bash-configuration]
+
+- name: create configuration file - .bash_aliases
+  template:
+    src: etc/skel/.bash_aliases.j2
+    dest: "{{ item }}/.bash_aliases"
+    owner: root
+    group: root
+    mode: 0644
+  with_items: bash_bashrc_destinations
+  tags: [configuration, bash, bash-configuration]

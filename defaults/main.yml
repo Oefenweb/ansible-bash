@@ -1,0 +1,7 @@
+---
+# defaults file for bash
+bash_bashrc_destinations:
+  # new users
+  - /etc/skel
+  # current user
+  - "{{ ansible_env.HOME }}"
