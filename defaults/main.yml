@@ -8,6 +8,7 @@ bash_bashrc_destinations:
 
 bash_histcontrol: ignoreboth
 bash_histappend: true
+bash_nohist: true
 bash_histsize: 1000
 bash_histfilesize: 2000
 bash_checkwinsize: true
