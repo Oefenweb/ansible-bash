@@ -13,3 +13,4 @@ bash_histfilesize: 2000
 bash_checkwinsize: true
 bash_globstar: false
 bash_force_color_prompt: true
+bash_fancy_prompt_prompt: true

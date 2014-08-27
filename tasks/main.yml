@@ -1,10 +1,12 @@
 ---
 # tasks file for bash
-- name: install
+- name: install dependencies
   apt:
-    name: bash
+    name: "{{ item }}"
     state: latest
-  tags: [configuration, bash, bash-install]
+  with_items: bash_dependencies
+  when: bash_dependencies
+  tags: [configuration, bash, bash-dependencies]
 
 - name: create configuration file - .bashrc
   template:
