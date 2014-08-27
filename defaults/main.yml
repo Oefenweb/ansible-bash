@@ -5,3 +5,10 @@ bash_bashrc_destinations:
   - /etc/skel
   # current user
   - "{{ ansible_env.HOME }}"
+
+bash_histcontrol: ignoreboth
+bash_histappend: true
+bash_histsize: 1000
+bash_histfilesize: 2000
+bash_checkwinsize: true
+bash_globstar: false

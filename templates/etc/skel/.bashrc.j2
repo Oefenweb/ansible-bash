@@ -7,22 +7,30 @@
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL={{ bash_histcontrol }}
 
 # append to the history file, don't overwrite it
+{% if bash_histappend %}
 shopt -s histappend
+{% endif %}
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE={{ bash_histsize }}
+HISTFILESIZE={{ bash_histfilesize }}
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
+{% if bash_checkwinsize %}
 shopt -s checkwinsize
+{% endif %}
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
+{% if bash_globstar %}
+shopt -s globstar
+{% else %}
 #shopt -s globstar
+{% endif %}
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
