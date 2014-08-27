@@ -12,3 +12,4 @@ bash_histsize: 1000
 bash_histfilesize: 2000
 bash_checkwinsize: true
 bash_globstar: false
+bash_force_color_prompt: true
