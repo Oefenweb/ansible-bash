@@ -11,15 +11,6 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-alias la='ls -lhaF'
-alias ll='ls -lhF'
-
-alias cls='history -c'
-
-alias sud='sudo su -l root'
-
-alias mkdir='mkdir -p'
-
-alias reload_alias='exec bash'
-
-alias py_serv='python -m SimpleHTTPServer';
+{% for key, value in bash_aliases.iteritems() %}
+alias {{ key }}='{{ value }}'
+{% endfor %}
