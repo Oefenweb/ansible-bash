@@ -5,3 +5,13 @@
   sudo: true
   roles:
     - bash
+  vars:
+    bash_bashrc_destinations:
+      skell:
+        dest: /etc/skel
+      current:
+        dest: "{{ ansible_env.HOME }}"
+      vagrant:
+        dest: /home/vagrant
+        owner: vagrant
+        group: vagrant

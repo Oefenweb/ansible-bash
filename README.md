@@ -8,7 +8,13 @@ None
 
 #### Variables
 
-* `bash_bashrc_destinations`: [default: `[/etc/skel, {{ ansible_env.HOME }}]`]: Destinations to copy the bashrc file(s) to
+* `bash_bashrc_destinations` [default: `{skell: dest: /etc/skel, current: dest: "{{ ansible_env.HOME }}"}`]: Destinations to copy the bashrc file(s) to
+* `bash_bashrc_destinations.key`: The identifier of the file (e.g. `skel`)
+* `bash_bashrc_destinations.key.dest`: The remote path of the file to copy (e.g. `/etc/skel`)
+* `bash_bashrc_destinations.key.owner`: The name of the user that should own the file (optional, default `root`)
+* `bash_bashrc_destinations.key.group`: The name of the group that should own the file (optional, default `root`)
+* `bash_bashrc_destinations.key.mode`: The mode of the file, such as 0644 (optional, default `0644`)
+
 * `bash_nohist`: [default: `true`]: Disables writing the history file
 * `bash_histcontrol`: [default: `ignoreboth`]: Don't put duplicate lines or lines starting with space in the history
 * `bash_histappend`: [default: `true`]: Append to the history file, don't overwrite it
