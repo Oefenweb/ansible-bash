@@ -12,7 +12,7 @@ before_install:
   - sudo apt-get update -qq
 
   # Remove bash
-  - sudo apt-get remove --purge bash
+  - sudo apt-get remove --purge bash || true
 
 install:
   # Install Ansible.
