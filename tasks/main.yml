@@ -15,7 +15,7 @@
     src: etc/skel/.bashrc.j2
     dest: "{{ item.value.dest }}/.bashrc"
     owner: "{{ item.value.owner | default('root') }}"
-    group: "{{ item.value.group | default('root') }}"
+    group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
   with_dict: bash_bashrc_destinations
   tags: [configuration, bash, bash-configuration]
@@ -25,7 +25,7 @@
     src: etc/skel/.bash_aliases.j2
     dest: "{{ item.value.dest }}/.bash_aliases"
     owner: "{{ item.value.owner | default('root') }}"
-    group: "{{ item.value.group | default('root') }}"
+    group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
   with_dict: bash_bashrc_destinations
   tags: [configuration, bash, bash-configuration]
