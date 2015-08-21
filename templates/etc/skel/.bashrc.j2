@@ -135,3 +135,9 @@ if [ -f /etc/bash_completion.d/virtualenvwrapper ]; then
   export PROJECT_HOME=$HOME/checkouts
   . /etc/bash_completion.d/virtualenvwrapper
 fi
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  export PROJECT_HOME=$HOME/checkouts
+  . /usr/local/bin/virtualenvwrapper.sh
+fi
