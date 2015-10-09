@@ -7,7 +7,6 @@
     update_cache: true
     cache_valid_time: 3600
   with_items: bash_dependencies
-  when: bash_dependencies
   tags: [configuration, bash, bash-dependencies]
 
 - name: create configuration file - .bashrc
