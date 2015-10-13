@@ -1,5 +1,5 @@
----
 # defaults file for bash
+---
 bash_bashrc_destinations:
   skell:
     dest: /etc/skel

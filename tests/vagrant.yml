@@ -1,10 +1,10 @@
----
 # test file for bash
+---
 - hosts: all
   remote_user: vagrant
   sudo: true
   roles:
-    - bash
+    - ../../
   vars:
     bash_bashrc_destinations:
       skell:
