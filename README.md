@@ -26,6 +26,7 @@ None
 * `bash_globstar`: [default: `false`]: If set, the pattern "**" used in a pathname expansion context will match all files and zero or more directories and subdirectories
 * `bash_force_color_prompt`: [default: `true`]: Use a colored prompt, if the terminal has the capability
 * `bash_fancy_prompt_prompt`: [default: `true`]: Use a (super) fancy prompt
+* `bashrc_lines`: [default: `[]`]: Lines to add to `.bashrc`
 * `bash_aliases`: [default: see `defaults/main.yml`]: Aliases
 
 ## Dependencies
@@ -38,7 +39,7 @@ None
 ---
 - hosts: all
   roles:
-  - bash
+    - bash
 ```
 
 #### License

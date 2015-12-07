@@ -15,12 +15,14 @@ bash_checkwinsize: true
 bash_globstar: false
 bash_force_color_prompt: true
 bash_fancy_prompt_prompt: true
+
+bashrc_lines: []
+
 bash_aliases:
   la: 'ls -lhaF'
   ll: 'ls -lhF'
   cls: 'history -c'
   sud: 'sudo su -l root'
   mkdir: 'mkdir -p'
-  reload_alias: 'exec bash'
-  py_serv: 'python -m SimpleHTTPServer'
+  py-serv: 'python -m SimpleHTTPServer'
   apt-update: 'sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get clean && sudo apt-get autoremove'

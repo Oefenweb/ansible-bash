@@ -130,14 +130,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
-if [ -f /etc/bash_completion.d/virtualenvwrapper ]; then
-  export WORKON_HOME=$HOME/.virtualenvs
-  export PROJECT_HOME=$HOME/checkouts
-  . /etc/bash_completion.d/virtualenvwrapper
-fi
-
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  export WORKON_HOME=$HOME/.virtualenvs
-  export PROJECT_HOME=$HOME/checkouts
-  . /usr/local/bin/virtualenvwrapper.sh
-fi
+{% for bashrc_line in bashrc_lines %}
+{{ bashrc_line }}
+{% endfor %}
