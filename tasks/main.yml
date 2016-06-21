@@ -6,8 +6,11 @@
     state: latest
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items: bash_dependencies
-  tags: [configuration, bash, bash-dependencies]
+  with_items: "{{ bash_dependencies }}"
+  tags:
+    - configuration
+    - bash
+    - bash-dependencies
 
 - name: create configuration file - .bashrc
   template:
@@ -16,8 +19,11 @@
     owner: "{{ item.value.owner | default('root') }}"
     group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
-  with_dict: bash_bashrc_destinations
-  tags: [configuration, bash, bash-configuration]
+  with_dict: "{{ bash_bashrc_destinations }}"
+  tags:
+    - configuration
+    - bash
+    - bash-configuration
 
 - name: create configuration file - .bash_aliases
   template:
@@ -26,5 +32,8 @@
     owner: "{{ item.value.owner | default('root') }}"
     group: "{{ item.value.group | default(item.value.owner) | default('root') }}"
     mode: "{{ item.value.mode | default('0644') }}"
-  with_dict: bash_bashrc_destinations
-  tags: [configuration, bash, bash-configuration]
+  with_dict: "{{ bash_bashrc_destinations }}"
+  tags:
+    - configuration
+    - bash
+    - bash-configuration
