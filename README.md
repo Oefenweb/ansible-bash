@@ -1,6 +1,6 @@
 ## bash
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-bash.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-bash) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-bash-blue.svg)](https://galaxy.ansible.com/tersmitten/bash)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-bash.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-bash) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-bash-blue.svg)](https://galaxy.ansible.com/Oefenweb/bash)
 
 Set up bash in Debian-like systems.
 
