@@ -1,6 +1,7 @@
 # meta file for bash
 ---
 galaxy_info:
+  role_name: bash
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up bash in Debian-like systems
@@ -12,10 +13,12 @@ galaxy_info:
         - precise
         - trusty
         - xenial
+        - bionic
     - name: Debian
       versions:
         - wheezy
         - jessie
+        - stretch
   galaxy_tags:
     - system
 dependencies: []
