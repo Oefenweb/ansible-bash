@@ -13,6 +13,6 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-{% for key, value in bash_aliases.items() %}
+{% for key, value in bash_aliases.items() | sort %}
 alias {{ key }}='{{ value }}'
 {% endfor %}
