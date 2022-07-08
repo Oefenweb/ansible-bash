@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install dependencies
-  apt:
+  ansible.builtin.apt:
     name: "{{ bash_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -12,7 +12,7 @@
     - bash-dependencies
 
 - name: create configuration file - .bashrc
-  template:
+  ansible.builtin.template:
     src: etc/skel/.bashrc.j2
     dest: "{{ item.value.dest }}/.bashrc"
     owner: "{{ item.value.owner | default('root') }}"
@@ -25,7 +25,7 @@
     - bash-configuration
 
 - name: create configuration file - .bash_aliases
-  template:
+  ansible.builtin.template:
     src: etc/skel/.bash_aliases.j2
     dest: "{{ item.value.dest }}/.bash_aliases"
     owner: "{{ item.value.owner | default('root') }}"
