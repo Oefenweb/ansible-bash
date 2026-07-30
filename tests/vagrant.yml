@@ -11,7 +11,7 @@
       skell:
         dest: /etc/skel
       current:
-        dest: "{{ ansible_env.HOME }}"
+        dest: "{{ ansible_facts['env']['HOME'] }}"
       vagrant:
         dest: /home/vagrant
         owner: vagrant

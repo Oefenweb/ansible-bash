@@ -4,7 +4,7 @@ bash_bashrc_destinations:
   skell:
     dest: /etc/skel
   current:
-    dest: "{{ ansible_env.HOME }}"
+    dest: "{{ ansible_facts['env']['HOME'] }}"
 
 bash_nohist: true
 bash_histcontrol: ignoreboth
